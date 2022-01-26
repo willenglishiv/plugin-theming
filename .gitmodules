@@ -1,0 +1,4 @@
+[submodule "themes/theme-default"]
+	path = themes/theme-default
+	url = https://github.com/rcv-prod-toolkit/theme-default
+	branch = main
