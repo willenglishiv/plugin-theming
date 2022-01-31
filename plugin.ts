@@ -28,6 +28,8 @@ const getThemes = async (ctx: PluginContext): Promise<Theme[]> => {
 
   const dir = await fs.promises.opendir(themesPath)
   for await (const folder of dir) {
+    if (!folder.isDirectory()) continue
+
     const themePath = path.join(themesPath, folder.name);
 
     let themeConfig: ThemeConfig
