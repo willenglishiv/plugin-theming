@@ -26,7 +26,7 @@ jobs:
           npm run build
 
       - name: Create Zip
-        run: zip -r plugin-themeing.zip package.json package-lock.json themes/ dist/* frontend/*
+        run: zip -r plugin-themeing.zip package.json package-lock.json themes dist/* frontend/*
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
