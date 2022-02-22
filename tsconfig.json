@@ -11,5 +11,5 @@
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
-  "exclude": ["frontend"]
+  "exclude": ["frontend", "dist"]
 }
