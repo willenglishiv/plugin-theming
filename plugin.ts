@@ -1,4 +1,4 @@
-import { PluginContext } from 'rcv-prod-toolkit-types'
+import { PluginContext } from '@rcv-prod-toolkit/types'
 import path from 'path'
 import fs from 'fs'
 import fse from 'fs-extra'
