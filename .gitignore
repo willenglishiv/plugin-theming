@@ -6,5 +6,4 @@ cache/
 .DS_Store
 
 frontend/active
-themes/valo/
-themes/tent/
+themes/
