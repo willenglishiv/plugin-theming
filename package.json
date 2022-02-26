@@ -1,30 +1,30 @@
 {
-  "name": "plugin-themeing",
-  "version": "1.0.1",
-  "description": "Module that provides themeing to web graphical elements, like WebGFX",
-  "author": "RCVolus",
-  "repository": "https://github.com/rcv-prod-toolkit/plugin-themeing",
-  "license": "MIT",
-  "toolkit": {
-    "modes": [
-      "PLUGIN"
-    ],
-    "plugin": {
-      "main": "dist/plugin.js"
+    "name": "plugin-themeing",
+    "version": "1.0.2",
+    "description": "Module that provides themeing to web graphical elements, like WebGFX",
+    "author": "RCVolus",
+    "repository": "https://github.com/rcv-prod-toolkit/plugin-themeing",
+    "license": "MIT",
+    "toolkit": {
+        "modes": [
+            "PLUGIN"
+        ],
+        "plugin": {
+            "main": "dist/plugin.js"
+        },
+        "needsBuild": true
     },
-    "needsBuild": true
-  },
-  "dependencies": {
-    "fs-extra": "^10.0.0",
-    "node-sass": "^7.0.0"
-  },
-  "scripts": {
-    "build": "tsc"
-  },
-  "devDependencies": {
-    "@types/fs-extra": "^9.0.12",
-    "@types/node-sass": "^4.11.2",
-    "@rcv-prod-toolkit/types": "github:rcv-prod-toolkit/types",
-    "typescript": "^4.3.2"
-  }
+    "dependencies": {
+        "fs-extra": "^10.0.0",
+        "node-sass": "^7.0.0"
+    },
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^9.0.12",
+        "@types/node-sass": "^4.11.2",
+        "@rcv-prod-toolkit/types": "github:rcv-prod-toolkit/types",
+        "typescript": "^4.3.2"
+    }
 }
