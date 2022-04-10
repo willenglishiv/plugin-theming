@@ -1,6 +1,6 @@
 {
     "name": "plugin-themeing",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Module that provides themeing to web graphical elements, like WebGFX",
     "author": "RCVolus",
     "repository": "https://github.com/rcv-prod-toolkit/plugin-themeing",
