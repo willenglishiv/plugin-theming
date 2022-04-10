@@ -164,6 +164,4 @@ module.exports = async (ctx: PluginContext) => {
       activeTheme
     })
   })
-
-  await ctx.LPTE.await('lpt', 'ready', 150000);
 };
