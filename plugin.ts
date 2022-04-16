@@ -4,8 +4,6 @@ import fs from 'fs'
 import fse from 'fs-extra'
 import sass from 'node-sass'
 
-const namespace = 'themeing';
-
 interface ThemeConfig {
   name: string
   author: string
@@ -72,6 +70,7 @@ const getActiveTheme = async (): Promise<string | null> => {
 }
 
 module.exports = async (ctx: PluginContext) => {
+  const namespace = ctx.plugin.module.getName();
   // Register new UI page
   ctx.LPTE.emit({
     meta: {
@@ -80,9 +79,9 @@ module.exports = async (ctx: PluginContext) => {
       version: 1
     },
     pages: [{
-      name: 'Themeing',
+      name: 'Theming',
       frontend: 'frontend',
-      id: 'op-themeing'
+      id: `op-${namespace}`
     }]
   });
 

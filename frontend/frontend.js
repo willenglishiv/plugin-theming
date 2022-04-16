@@ -1,7 +1,9 @@
+const namespace = 'plugin-theming'
+
 const start = async () => {
   const themes = await window.LPTE.request({
     meta: {
-      namespace: 'themeing',
+      namespace,
       type: 'get-themes',
       version: 1
     }
@@ -12,7 +14,7 @@ const start = async () => {
 const reload = async () => {
   const themes = await window.LPTE.request({
     meta: {
-      namespace: 'themeing',
+      namespace,
       type: 'reload-themes',
       version: 1
     }
@@ -24,7 +26,7 @@ window.reload = reload
 const apply = async () => {
   const themes = await window.LPTE.request({
     meta: {
-      namespace: 'themeing',
+      namespace,
       type: 'activate-theme',
       version: 1
     },
