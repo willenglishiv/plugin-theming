@@ -2,3 +2,11 @@
 	path = themes/theme-default
 	url = https://github.com/rcv-prod-toolkit/theme-default
 	branch = main
+[submodule "themes/theme-league-tent"]
+	path = themes/theme-league-tent
+	url = https://github.com/rcv-prod-toolkit/theme-league-tent
+	branch = main
+[submodule "themes/theme-valorant-shooting-stars"]
+	path = themes/theme-valorant-shooting-stars
+	url = https://github.com/rcv-prod-toolkit/theme-valorant-shooting-stars
+	branch = main
