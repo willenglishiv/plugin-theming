@@ -11,9 +11,9 @@ interface ThemeConfig {
 }
 
 interface Theme {
-  config: ThemeConfig,
-  folder: string,
-  scss: string,
+  config: ThemeConfig
+  folder: string
+  scss: string
   id: string
 }
 
@@ -28,13 +28,16 @@ const getThemes = async (ctx: PluginContext): Promise<Theme[]> => {
   for await (const folder of dir) {
     if (!folder.isDirectory()) continue
 
-    const themePath = path.join(themesPath, folder.name);
+    const themePath = path.join(themesPath, folder.name)
 
     let themeConfig: ThemeConfig
     let scss: string
     try {
       themeConfig = require(path.join(themePath, 'theme.json'))
-      scss = await fs.promises.readFile(path.join(themePath, 'index.scss'), 'utf-8');
+      scss = await fs.promises.readFile(
+        path.join(themePath, 'index.scss'),
+        'utf-8'
+      )
     } catch (e) {
       ctx.log.warn(`Failed to load theme in ${themePath}`, e)
       continue
@@ -59,18 +62,18 @@ const getThemes = async (ctx: PluginContext): Promise<Theme[]> => {
 const getActiveTheme = async (): Promise<string | null> => {
   const idFilePath = path.join(__dirname, '../frontend/active/id')
 
-  try { 
+  try {
     await fs.promises.stat(idFilePath)
   } catch (e) {
-    return null;
+    return null
   }
 
   const activeTheme = (await fs.promises.readFile(idFilePath, 'utf-8')).trim()
-  return activeTheme;
+  return activeTheme
 }
 
 module.exports = async (ctx: PluginContext) => {
-  const namespace = ctx.plugin.module.getName();
+  const namespace = ctx.plugin.module.getName()
   // Register new UI page
   ctx.LPTE.emit({
     meta: {
@@ -78,12 +81,14 @@ module.exports = async (ctx: PluginContext) => {
       namespace: 'ui',
       version: 1
     },
-    pages: [{
-      name: 'Theming',
-      frontend: 'frontend',
-      id: `op-${namespace}`
-    }]
-  });
+    pages: [
+      {
+        name: 'Theming',
+        frontend: 'frontend',
+        id: `op-${namespace}`
+      }
+    ]
+  })
 
   let activeTheme = await getActiveTheme()
 
@@ -95,11 +100,11 @@ module.exports = async (ctx: PluginContext) => {
       version: 1
     },
     status: 'RUNNING'
-  });
+  })
 
   themes = await getThemes(ctx)
 
-  ctx.LPTE.on(namespace, 'get-themes', event => {
+  ctx.LPTE.on(namespace, 'get-themes', (event) => {
     ctx.LPTE.emit({
       meta: {
         type: event.meta.reply as string,
@@ -111,8 +116,8 @@ module.exports = async (ctx: PluginContext) => {
     })
   })
 
-  ctx.LPTE.on(namespace, 'reload-themes', async event => {
-    themes = await getThemes(ctx);
+  ctx.LPTE.on(namespace, 'reload-themes', async (event) => {
+    themes = await getThemes(ctx)
     ctx.LPTE.emit({
       meta: {
         type: event.meta.reply as string,
@@ -124,7 +129,7 @@ module.exports = async (ctx: PluginContext) => {
     })
   })
 
-  ctx.LPTE.on(namespace, 'activate-theme', async event => {
+  ctx.LPTE.on(namespace, 'activate-theme', async (event) => {
     activeTheme = event.theme as string
 
     const themePath = path.join(__dirname, '../themes/', activeTheme)
@@ -142,16 +147,19 @@ module.exports = async (ctx: PluginContext) => {
       ctx.log.error('Applying theme failed', e)
     }
 
-    sass.render({
-      file: path.join(activePath, 'index.scss')
-    }, async (err, result) => {
-      if (err) {
-        ctx.log.error('Failed to compile scss', err)
-        return;
-      }
+    sass.render(
+      {
+        file: path.join(activePath, 'index.scss')
+      },
+      async (err, result) => {
+        if (err) {
+          ctx.log.error('Failed to compile scss', err)
+          return
+        }
 
-      fs.writeFile(path.join(activePath, 'index.css'), result.css, () => {})
-    });
+        fs.writeFile(path.join(activePath, 'index.css'), result.css, () => {})
+      }
+    )
 
     ctx.LPTE.emit({
       meta: {
@@ -163,4 +171,4 @@ module.exports = async (ctx: PluginContext) => {
       activeTheme
     })
   })
-};
+}

@@ -36,11 +36,11 @@ const apply = async () => {
 }
 window.apply = apply
 
-const updateSelect = event => {
+const updateSelect = (event) => {
   const select = document.getElementById('theme-selector')
   select.innerHTML = ''
 
-  event.themes.forEach(theme => {
+  event.themes.forEach((theme) => {
     const name = theme.config.name
     const value = theme.id
 
