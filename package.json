@@ -16,15 +16,15 @@
     },
     "dependencies": {
         "fs-extra": "^10.0.0",
-        "node-sass": "^7.0.0"
+        "sass": "^1.55.0"
     },
     "scripts": {
         "build": "tsc"
     },
     "devDependencies": {
+        "@rcv-prod-toolkit/types": "github:rcv-prod-toolkit/types",
         "@types/fs-extra": "^9.0.12",
         "@types/node-sass": "^4.11.2",
-        "@rcv-prod-toolkit/types": "github:rcv-prod-toolkit/types",
         "typescript": "^4.3.2"
     }
 }
