@@ -10,3 +10,7 @@
 	path = themes/theme-valorant-shooting-stars
 	url = https://github.com/rcv-prod-toolkit/theme-valorant-shooting-stars
 	branch = main
+[submodule "themes/theme-league-ace-gaming"]
+	path = themes/theme-league-ace-gaming
+	url = https://github.com/rcv-prod-toolkit/theme-league-ace-gaming
+	branch = main
