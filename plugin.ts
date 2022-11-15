@@ -2,7 +2,7 @@ import { PluginContext } from '@rcv-prod-toolkit/types'
 import { join } from 'path'
 import { writeFile, opendir, readFile, stat } from 'fs/promises'
 import { emptyDir, copy } from 'fs-extra'
-import { compileAsync } from "sass"
+import { compileAsync } from 'sass'
 
 interface ThemeConfig {
   name: string
@@ -145,8 +145,8 @@ module.exports = async (ctx: PluginContext) => {
     }
 
     try {
-      const result = await compileAsync(join(activePath, "index.scss"))
-      await writeFile(join(activePath, "index.css"), result.css)
+      const result = await compileAsync(join(activePath, 'index.scss'))
+      await writeFile(join(activePath, 'index.css'), result.css)
     } catch (error) {
       ctx.log.error('Failed to compile scss', error)
     }
