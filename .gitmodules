@@ -1,16 +1,16 @@
 [submodule "themes/theme-default"]
 	path = themes/theme-default
-	url = https://github.com/rcv-prod-toolkit/theme-default
+	url = https://github.com/rcv-prod-toolkit/theme-default.git
 	branch = main
 [submodule "themes/theme-league-tent"]
 	path = themes/theme-league-tent
-	url = https://github.com/rcv-prod-toolkit/theme-league-tent
+	url = https://github.com/rcv-prod-toolkit/theme-league-tent.git
 	branch = main
 [submodule "themes/theme-valorant-shooting-stars"]
 	path = themes/theme-valorant-shooting-stars
-	url = https://github.com/rcv-prod-toolkit/theme-valorant-shooting-stars
+	url = https://github.com/rcv-prod-toolkit/theme-valorant-shooting-stars.git
 	branch = main
 [submodule "themes/theme-league-ace-gaming"]
 	path = themes/theme-league-ace-gaming
-	url = https://github.com/rcv-prod-toolkit/theme-league-ace-gaming
+	url = https://github.com/rcv-prod-toolkit/theme-league-ace-gaming.git
 	branch = main
