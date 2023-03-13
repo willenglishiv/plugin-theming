@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "fs-extra": "^11.1.0",
-        "sass": "^1.58.3"
+        "sass": "^1.59.2"
     },
     "scripts": {
         "build": "tsc"
