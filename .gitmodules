@@ -6,11 +6,14 @@
 	path = themes/theme-league-tent
 	url = https://github.com/rcv-prod-toolkit/theme-league-tent.git
 	branch = main
+	update = none
 [submodule "themes/theme-valorant-shooting-stars"]
 	path = themes/theme-valorant-shooting-stars
 	url = https://github.com/rcv-prod-toolkit/theme-valorant-shooting-stars.git
 	branch = main
+	update = none
 [submodule "themes/theme-league-ace-gaming"]
 	path = themes/theme-league-ace-gaming
 	url = https://github.com/rcv-prod-toolkit/theme-league-ace-gaming.git
 	branch = main
+	update = none
